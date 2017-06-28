@@ -157,14 +157,14 @@ new (function() {
             [' ', 'GPIO %m.gpio を OFF', 'gpioOff', '25'],
             ['R', 'GPIO %m.gpio の状態', 'gpioStatus', '25'],
             [' ', 'GPIO %m.gpio を %n にする', 'gpiopwm', '25', '0'],
-            ['R', '%m.location の %m.date のお天気', 'get_weather', '東京', '今日'],
-            ['R', '%m.location の %m.date の最高気温', 'get_temp', '東京', '今日'],
-            ['R', '%m.location の %m.date の天気概要', 'get_weatherDesc', '東京', '今日']
+//            ['R', '%m.location の %m.date のお天気', 'get_weather', '東京', '今日'],
+//            ['R', '%m.location の %m.date の最高気温', 'get_temp', '東京', '今日'],
+//            ['R', '%m.location の %m.date の天気概要', 'get_weatherDesc', '東京', '今日']
         ],
         menus: {
             gpio: ['22', '23', '24', '25'],
-            location: ['東京', '横浜', 'さいたま', '千葉'],
-            date: ['今日', '明日'],
+//            location: ['東京', '横浜', 'さいたま', '千葉'],
+//            date: ['今日', '明日'],
         }
     };
 
