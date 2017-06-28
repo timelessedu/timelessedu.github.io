@@ -71,10 +71,10 @@ new (function() {
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            [' ', 'GPIO %m.gpio を ON', 'gpioOn', '25'],
-            [' ', 'GPIO %m.gpio を OFF', 'gpioOff', '25'],
-            ['R', 'GPIO %m.gpio の状態', 'gpioStatus', '25'],
-            [' ', 'GPIO %m.gpio を %n にする', 'gpiopwm', '25', '0'],
+            [' ', 'ピン %m.gpio を ON', 'gpioOn', '25'],
+            [' ', 'ピン %m.gpio を OFF', 'gpioOff', '25'],
+            ['R', 'ピン %m.gpio の状態', 'gpioStatus', '25'],
+            [' ', 'ピン %m.gpio を %n にする', 'gpiopwm', '25', '0'],
         ],
         menus: {
             gpio: ['22', '23', '24', '25'],
