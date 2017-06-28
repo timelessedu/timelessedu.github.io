@@ -1,5 +1,4 @@
-/* Extension demonstrating a blocking command block */
-/* Sayamindu Dasgupta <sayamindu@media.mit.edu>, May 2014 */
+//  Scratch extension for Raspberry Pi
 
 new (function() {
     var ext = this;
