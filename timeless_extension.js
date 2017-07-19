@@ -53,6 +53,19 @@ new (function() {
 
     };
 
+    ext.pwm4Write = function(duty1, duty2, duty3, duty4) {
+        // Make an AJAX call to the GPIO API
+        $.ajax({
+              type: 'POST',
+              url: 'http://127.0.0.1:5000/pwm4Write/' + duty1 + ',' + duty2 + ',' + duty3 + ',' + duty4,
+              success: function(res) {
+                  // Got the data - parse it and return the gpio status
+                  console.log(res)
+              }
+        });
+
+    };
+
     ext.gpioStatus = function(gpio, callback) {
         // Make an AJAX call to the GPIO API
         $.ajax({
@@ -75,6 +88,7 @@ new (function() {
             [' ', 'ピン %m.gpio を OFF', 'gpioOff', '25'],
             ['R', 'ピン %m.gpio の状態', 'gpioStatus', '25'],
             [' ', 'ピン %m.gpio を %n にする', 'gpiopwm', '25', '0'],
+            [' ', 'モーター出力を %n %n %n %n にする', 'pwm4Write', '0', '0', '0', '0'],
         ],
         menus: {
             gpio: ['22', '23', '24', '25'],
