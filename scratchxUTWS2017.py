@@ -4,46 +4,11 @@ from requests.auth import HTTPBasicAuth
 import json
 from time import sleep
 
-url = 'http://weather.livedoor.com/forecast/webservice/json/v1'
 webio = 'http://192.168.100.30:8000/'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-
-@app.route('/weather')
-def weather():
-	city = request.args.get('city', '130010', type=str)
-	date = request.args.get('date', '今日', type=str)
-
-	payload = {
-		'city' : city,
-	}
-	r = requests.get(url, params=payload)
-	responseDict = r.json()
-
-	#print('天気概要；', responseDict['description']['text'])
-
-	result = {}
-
-	result['description'] = responseDict['description']['text']
-
-	#  Get weather information 
-	for forecast in responseDict['forecasts']:
-		if forecast['dateLabel'] == date:
-			result['telop'] = forecast['telop']
-			if forecast['temperature']['min'] is not None:
-				result['mintemp'] = forecast['temperature']['min']['celsius']
-
-			if forecast['temperature']['max'] is not None:
-				result['maxtemp'] = forecast['temperature']['max']['celsius']
-
-			break
-
-	#  Return response
-	resp = Response(json.dumps(result, ensure_ascii=False).encode('utf8'))
-	resp.headers['Access-Control-Allow-Origin'] = '*'		# for x-site scripting
-	return resp
 
 #  for WebIOpi
 @app.route('/gpio/<gpioId>/<stat>', methods=['POST'])
